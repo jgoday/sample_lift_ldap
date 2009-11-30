@@ -10,7 +10,6 @@ object LoginUtil {
     def isLogged = User.loggedIn_?
 
     def hasAuthority_?(name: String) : Boolean = {
-        println("User roles : " + User.getRoles)
         LoginUtil.isLogged && (User.getRoles.count((element: String) => {element == name}) > 0)
     }
 
